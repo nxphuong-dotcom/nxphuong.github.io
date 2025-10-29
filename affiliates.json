@@ -1,0 +1,18 @@
+[
+  {
+    "sku": "ao-thun-demo",
+    "name": "Áo thun demo",
+    "image": "/assets/img/products/ao-thun-demo.webp",
+    "price_vnd": 99000,
+    "origin_url": "https://example.com/ao-thun",
+    "merchant": "demo"
+  },
+  {
+    "sku": "may-cat-gach-demo",
+    "name": "Máy cắt gạch demo",
+    "image": "/assets/img/products/may-cat-gach-demo.webp",
+    "price_vnd": 1590000,
+    "origin_url": "https://example.com/may-cat-gach",
+    "merchant": "demo"
+  }
+]
