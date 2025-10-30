@@ -1,11 +1,16 @@
-# nxphuong.github.io — Starter
-Bước:
-1) Tạo repo **nxphuong.github.io** (Public).
-2) Upload toàn bộ lên nhánh `main` (Add file → Upload files).
-3) Settings → Pages: Deploy from a branch → `main` / `/` → Save.
-4) Mở https://nxphuong.github.io
+# Patch: Danh mục "Thời trang"
 
-Chuẩn MXD:
-- GA4 `/assets/analytics.js` **trước** `/assets/mxd-affiliate.js`.
-- Ảnh sản phẩm: `/assets/img/products/<sku>.webp`.
-- Sửa `affiliates.json`, mở `/g.html?sku=<sku>` để xem.
+Files:
+- /store/thoi-trang.html  (hub)
+- /assets/img/categories/thoi-trang.webp  (icon)
+- /store.html  (đã chèn tile mẫu; REPLACE nếu file của bạn chưa chỉnh gì thêm)
+- /SITEMAP-INSERT-thoi-trang.txt (block XML để thêm vào sitemap)
+
+Commit gợi ý:
+1) feat(layout): add Thời trang hub at /store/thoi-trang.html
+2) feat(layout): add Thời trang tile linking to /store/thoi-trang.html in store.html
+3) chore(seo): update sitemap.xml with /store/thoi-trang.html (lastmod=2025-10-29)
+
+Nếu store.html của bạn đã chỉnh trước đó, đừng replace — chỉ chèn dòng sau vào grid:
+
+<li><a class="category-tile" href="/store/thoi-trang.html"><img src="/assets/img/categories/thoi-trang.webp" alt="Thời trang — MXD" width="600" height="400"><span>Thời trang</span></a></li>
