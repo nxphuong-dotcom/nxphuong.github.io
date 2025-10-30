@@ -1,0 +1,31 @@
+{
+  "version": "mxd-config-2025-10-30",
+  "repo": "nxphuong.github.io",
+  "ga4": "G-2RX0F54604",
+  "contact": {
+    "facebook": "https://www.facebook.com/se.con.9",
+    "phone": "0908399962"
+  },
+  "affiliate": {
+    "rewrite_fmt": "https://go.isclix.com/deep_link/{pid}/{offer}?url={url}&sub1={sub1}&sub2={sub2}&sub3={sku}&sub4={sub4}",
+    "subs_default": {
+      "sub1": "{repo}",
+      "sub2": "{category}",
+      "sub4": "oneatweb"
+    },
+    "merchants": {
+      "shopee": {
+        "pid": "5673122043196559097",
+        "offer": "4751584435713464237"
+      },
+      "tiktok": {
+        "pid": "5673122043196559097",
+        "offer": "6648523843406889655"
+      },
+      "lazada": {
+        "pid": "5673122043196559097",
+        "offer": "5127144557053758578"
+      }
+    }
+  }
+}
