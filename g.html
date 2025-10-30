@@ -58,11 +58,7 @@
   <script>
     (function() {
       fetch('/assets/site.config.json').then(r=>r.json()).then(cfg=>{
-        const set = (id, href)=>{
-          const a = document.getElementById(id);
-          if (!a) return;
-          if (href) a.href = href; else a.style.display='none';
-        };
+        const set = (id, href)=>{ const a=document.getElementById(id); if(!a) return; if(href) a.href=href; else a.style.display='none'; };
         set('btn-call', cfg.tel ? ('tel:'+cfg.tel) : '');
         set('btn-zalo', cfg.zalo ? ('https://zalo.me/'+cfg.zalo) : '');
         set('btn-facebook', cfg.facebook || '');

@@ -23,7 +23,7 @@
     "image": "/assets/img/products/ao-thun-tron-nxp.webp",
     "price_vnd": 79000,
     "origin_url": "https://example.com/ao-thun-tron",
-    "merchant": "shopee",
+    "merchant": "lazada",
     "cat": "thoi-trang"
   },
   {
@@ -32,7 +32,7 @@
     "image": "/assets/img/products/quan-jean-basic-nxp.webp",
     "price_vnd": 299000,
     "origin_url": "https://example.com/quan-jean",
-    "merchant": "shopee",
+    "merchant": "tiktok",
     "cat": "thoi-trang"
   },
   {
@@ -50,7 +50,7 @@
     "image": "/assets/img/products/ta-dan-mem-nxp.webp",
     "price_vnd": 259000,
     "origin_url": "https://example.com/ta-dan",
-    "merchant": "shopee",
+    "merchant": "lazada",
     "cat": "me-va-be"
   }
 ]

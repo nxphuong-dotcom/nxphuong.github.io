@@ -3,27 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cửa hàng — nxphuong</title>
+  <title>Cửa hàng — nxp</title>
   <link rel="canonical" href="https://nxphuong.github.io/store.html">
-  <meta name="description" content="Hub cửa hàng theo chuẩn MXD cho nxphuong.">
-  <meta property="og:title" content="Cửa hàng — nxphuong">
-  <meta property="og:description" content="Hub cửa hàng theo chuẩn MXD cho nxphuong.">
+  <meta name="description" content="Hub cửa hàng của nxp — 3 danh mục: Mỹ phẩm, Thời trang, Mẹ & Bé.">
+  <meta property="og:title" content="Cửa hàng — nxp">
+  <meta property="og:description" content="Hub cửa hàng của nxp — 3 danh mục: Mỹ phẩm, Thời trang, Mẹ & Bé.">
   <meta property="og:url" content="https://nxphuong.github.io/store.html">
+  <meta property="og:type" content="website">
   <link rel="stylesheet" href="/assets/site.css">
   <script defer src="/assets/analytics.js"></script>
-  <script defer src="/assets/mxd-affiliate.js"></script>
+  <script defer src="/assets/aff-engine.js"></script>
 </head>
 <body>
-  <header class="container"><h1>Cửa hàng</h1></header>
-  <main class="container">
-    <ul class="category-grid">
-      <li><a class="category-tile" href="/store/thoi-trang.html"><img src="/assets/img/categories/thoi-trang.webp" alt="Thời trang — MXD" width="600" height="400"><span>Thời trang</span></a></li>
-      <li><a class="category-tile" href="/store/my-pham.html"><img src="/assets/img/categories/my-pham.webp" alt="Mỹ phẩm — MXD" width="600" height="400"><span>Mỹ phẩm</span></a></li>
-      <li><a class="category-tile" href="/g.html?sku=ao-thun-demo"><span>Áo thun (demo)</span></a></li>
-         <li><a class="category-tile" href="/store/me-va-be.html"><img src="/assets/img/categories/me-va-be.webp" alt="Mẹ & Bé — MXD" width="600" height="400"><span>Mẹ&Bé</span></a></li>
 
-    </ul>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="/">nxp</a>
+      <nav class="nav">
+        <a href="/store.html">Cửa hàng</a>
+        <a href="/store/my-pham.html">Mỹ phẩm</a>
+        <a href="/store/thoi-trang.html">Thời trang</a>
+        <a href="/store/me-va-be.html">Mẹ & Bé</a>
+        <a href="/contact.html">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Cửa hàng</h1>
+    <div class="category-grid">
+      <a class="category-tile" href="/store/my-pham.html"><img src="/assets/img/categories/my-pham.webp" alt="Mỹ phẩm — nxp"><span>Mỹ phẩm</span></a>
+      <a class="category-tile" href="/store/thoi-trang.html"><img src="/assets/img/categories/thoi-trang.webp" alt="Thời trang — nxp"><span>Thời trang</span></a>
+      <a class="category-tile" href="/store/me-va-be.html"><img src="/assets/img/categories/me-va-be.webp" alt="Mẹ & Bé — nxp"><span>Mẹ & Bé</span></a>
+    </div>
   </main>
-  <footer class="footer container">© 2025-10-29 nxphuong</footer>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>© 2025 nxp</div>
+      <div class="small">Website cá nhân chạy trên GitHub Pages.</div>
+    </div>
+  </footer>
+
+
+  <div class="floating-contacts">
+    <a id="btn-zalo"   class="float-btn" href="#" rel="nofollow noopener" title="Zalo">Zalo</a>
+    <a id="btn-call"   class="float-btn" href="#" rel="nofollow noopener" title="Gọi">Gọi</a>
+    <a id="btn-facebook" class="float-btn" href="#" rel="nofollow noopener" title="Facebook">FB</a>
+  </div>
+  <script>
+    (function() {
+      fetch('/assets/site.config.json').then(r=>r.json()).then(cfg=>{
+        const set = (id, href)=>{ const a=document.getElementById(id); if(!a) return; if(href) a.href=href; else a.style.display='none'; };
+        set('btn-call', cfg.tel ? ('tel:'+cfg.tel) : '');
+        set('btn-zalo', cfg.zalo ? ('https://zalo.me/'+cfg.zalo) : '');
+        set('btn-facebook', cfg.facebook || '');
+      }).catch(()=>{});
+    })();
+  </script>
+
 </body>
 </html>
