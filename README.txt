@@ -1,14 +1,18 @@
-# Patch: Danh mục "Mỹ phẩm"
-Files:
-- /store/my-pham.html
-- /assets/img/categories/my-pham.webp
-- /store.html (đã chèn tile Mỹ phẩm)
-- /SITEMAP-INSERT-my-pham.txt
+# nxp.github.io — scaffold (brand riêng; no 'mxd' text)
 
-Commit messages gợi ý:
-1) feat(layout): add Mỹ phẩm hub at /store/my-pham.html
-2) feat(layout): add Mỹ phẩm tile linking to /store/my-pham.html in store.html
-3) chore(seo): update sitemap.xml with /store/my-pham.html (lastmod=2025-10-29)
+Cấu hình nhanh:
+- assets/aff-engine.js → điền ISCLIX.pub_id, ISCLIX.camp_id
+- assets/site.config.json → tel/zalo/facebook/email (để trống sẽ ẩn nút)
+- assets/analytics.js → GA4 (nếu dùng)
 
-Nếu store.html đã được chỉnh trước đó, chỉ chèn tile sau vào grid:
-<li><a class="category-tile" href="/store/my-pham.html"><img src="/assets/img/categories/my-pham.webp" alt="Mỹ phẩm — MXD" width="600" height="400"><span>Mỹ phẩm</span></a></li>
+Triển khai:
+1) Upload toàn bộ lên repo nxphuong.github.io (nhánh main).
+2) Settings → Pages → Deploy from a branch → main / / → Save
+3) Mở https://nxphuong.github.io
+
+Commit gợi ý:
+chore(init): scaffold nxp brand
+feat(layout): home, store, 3 hubs, contact, floating buttons
+feat(product): product page + affiliate rewrite (isclix)
+feat(data): 2 SKU demo mỗi danh mục
+chore(seo): sitemap, robots, .nojekyll

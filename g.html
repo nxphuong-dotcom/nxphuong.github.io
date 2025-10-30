@@ -1,29 +1,75 @@
 <!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sản phẩm | nxphuong</title>
-  <meta name="description" content="Trang sản phẩm theo chuẩn MXD.">
-  <link rel="canonical" id="canonical" href="https://nxphuong.github.io/g.html">
-  <meta property="og:title" content="Sản phẩm | nxphuong">
-  <meta property="og:description" content="Trang sản phẩm theo chuẩn MXD.">
-  <meta property="og:url" id="ogurl" content="https://nxphuong.github.io/g.html">
+  <title>Sản phẩm | nxp</title>
+  <link rel="canonical" href="https://nxphuong.github.io/g.html">
+  <meta name="description" content="Trang chi tiết sản phẩm của nxp.">
+  <meta property="og:title" content="Sản phẩm | nxp">
+  <meta property="og:description" content="Trang chi tiết sản phẩm của nxp.">
+  <meta property="og:url" content="https://nxphuong.github.io/g.html">
+  <meta property="og:type" content="product">
   <link rel="stylesheet" href="/assets/site.css">
   <script defer src="/assets/analytics.js"></script>
-  <script defer src="/assets/mxd-affiliate.js"></script>
+  <script defer src="/assets/aff-engine.js"></script>
+  <link id="canonical" rel="canonical" href="https://nxphuong.github.io/g.html">
+  <meta id="ogurl" property="og:url" content="https://nxphuong.github.io/g.html">
 </head>
 <body>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="/">nxp</a>
+      <nav class="nav">
+        <a href="/store.html">Cửa hàng</a>
+        <a href="/store/my-pham.html">Mỹ phẩm</a>
+        <a href="/store/thoi-trang.html">Thời trang</a>
+        <a href="/store/me-va-be.html">Mẹ & Bé</a>
+        <a href="/contact.html">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
   <main class="container">
-    <article id="product" class="card">
+    <article id="p" class="card product-detail">
+      <img id="p-img" alt="" class="cover">
       <h1 id="p-name">Đang tải…</h1>
-      <img id="p-img" alt="" width="800" height="533" style="max-width:100%;height:auto">
-      <p id="p-price"></p>
+      <div id="p-price" class="price"></div>
       <div class="actions">
-        <a id="p-origin" class="buy" href="#" target="_blank" rel="nofollow noopener">Mua tại nơi bán</a>
+        <a id="p-buy" class="btn buy" href="#" rel="nofollow noopener" target="_blank">Mua tại nơi bán</a>
       </div>
     </article>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>© 2025 nxp</div>
+      <div class="small">Website cá nhân chạy trên GitHub Pages.</div>
+    </div>
+  </footer>
+
+
+  <div class="floating-contacts">
+    <a id="btn-zalo"   class="float-btn" href="#" rel="nofollow noopener" title="Zalo">Zalo</a>
+    <a id="btn-call"   class="float-btn" href="#" rel="nofollow noopener" title="Gọi">Gọi</a>
+    <a id="btn-facebook" class="float-btn" href="#" rel="nofollow noopener" title="Facebook">FB</a>
+  </div>
+  <script>
+    (function() {
+      fetch('/assets/site.config.json').then(r=>r.json()).then(cfg=>{
+        const set = (id, href)=>{
+          const a = document.getElementById(id);
+          if (!a) return;
+          if (href) a.href = href; else a.style.display='none';
+        };
+        set('btn-call', cfg.tel ? ('tel:'+cfg.tel) : '');
+        set('btn-zalo', cfg.zalo ? ('https://zalo.me/'+cfg.zalo) : '');
+        set('btn-facebook', cfg.facebook || '');
+      }).catch(()=>{});
+    })();
+  </script>
+
   <script>
   (async function() {
     const params = new URLSearchParams(location.search);
@@ -35,27 +81,19 @@
       ogurl.content = canonical.href;
     }
     const el = (id)=>document.getElementById(id);
-    try {
-      const data = await fetch('/affiliates.json').then(r=>r.json());
-      const p = data.find(x=>x.sku===sku) || null;
-      if (!p) {
-        el('p-name').textContent = 'Không tìm thấy sản phẩm (thiếu sku hoặc chưa có trong affiliates.json)';
-        document.title = '404 SKU — nxphuong';
-        return;
-      }
-      document.title = p.name + ' | nxphuong';
-      el('p-name').textContent = p.name;
-      el('p-img').src = p.image || ('/assets/img/products/' + p.sku + '.webp');
-      el('p-img').alt = p.name + ' — nxphuong';
-      el('p-price').textContent = (p.price_vnd ? ('Giá tham khảo: ' + p.price_vnd.toLocaleString('vi-VN') + ' ₫') : '');
-      const a = el('p-origin');
-      a.href = p.origin_url;
-      a.dataset.merchant = p.merchant || '';
-      a.dataset.sku = p.sku;
-    } catch(e) {
-      el('p-name').textContent = 'Lỗi nạp dữ liệu sản phẩm.';
-      console.error(e);
-    }
+    const data = await fetch('/affiliates.json').then(r=>r.json()).catch(()=>[]);
+    const p = data.find(x=>x.sku===sku);
+    if (!p) { el('p-name').textContent='Không tìm thấy sản phẩm.'; document.title='404 — nxp'; return; }
+    document.title = p.name + ' | nxp';
+    el('p-name').textContent = p.name;
+    el('p-img').src = p.image || ('/assets/img/products/'+p.sku+'.webp');
+    el('p-img').alt = p.name + ' — nxp';
+    el('p-price').textContent = p.price_vnd ? (p.price_vnd.toLocaleString('vi-VN')+' ₫') : '';
+    const buy = el('p-buy');
+    buy.href = p.origin_url;
+    buy.dataset.sku = p.sku;
+    buy.dataset.merchant = p.merchant || '';
+    window.nxpAff && window.nxpAff.enhanceLinks && window.nxpAff.enhanceLinks([buy]);
   })();
   </script>
 </body>

@@ -1,18 +1,56 @@
 [
   {
-    "sku": "ao-thun-demo",
-    "name": "Áo thun demo",
-    "image": "/assets/img/products/ao-thun-demo.webp",
-    "price_vnd": 99000,
-    "origin_url": "https://example.com/ao-thun",
-    "merchant": "demo"
+    "sku": "serum-vitc-nxp",
+    "name": "Serum Vitamin C (demo)",
+    "image": "/assets/img/products/serum-vitc-nxp.webp",
+    "price_vnd": 159000,
+    "origin_url": "https://example.com/serum-vitc",
+    "merchant": "shopee",
+    "cat": "my-pham"
   },
   {
-    "sku": "may-cat-gach-demo",
-    "name": "Máy cắt gạch demo",
-    "image": "/assets/img/products/may-cat-gach-demo.webp",
-    "price_vnd": 1590000,
-    "origin_url": "https://example.com/may-cat-gach",
-    "merchant": "demo"
+    "sku": "son-do-classic-nxp",
+    "name": "Son đỏ classic (demo)",
+    "image": "/assets/img/products/son-do-classic-nxp.webp",
+    "price_vnd": 99000,
+    "origin_url": "https://example.com/son-do",
+    "merchant": "shopee",
+    "cat": "my-pham"
+  },
+  {
+    "sku": "ao-thun-tron-nxp",
+    "name": "Áo thun trơn (demo)",
+    "image": "/assets/img/products/ao-thun-tron-nxp.webp",
+    "price_vnd": 79000,
+    "origin_url": "https://example.com/ao-thun-tron",
+    "merchant": "shopee",
+    "cat": "thoi-trang"
+  },
+  {
+    "sku": "quan-jean-basic-nxp",
+    "name": "Quần jean basic (demo)",
+    "image": "/assets/img/products/quan-jean-basic-nxp.webp",
+    "price_vnd": 299000,
+    "origin_url": "https://example.com/quan-jean",
+    "merchant": "shopee",
+    "cat": "thoi-trang"
+  },
+  {
+    "sku": "binh-sua-ppsus-nxp",
+    "name": "Bình sữa PPSU (demo)",
+    "image": "/assets/img/products/binh-sua-ppsus-nxp.webp",
+    "price_vnd": 189000,
+    "origin_url": "https://example.com/binh-sua",
+    "merchant": "shopee",
+    "cat": "me-va-be"
+  },
+  {
+    "sku": "ta-dan-mem-nxp",
+    "name": "Tã dán mềm (demo)",
+    "image": "/assets/img/products/ta-dan-mem-nxp.webp",
+    "price_vnd": 259000,
+    "origin_url": "https://example.com/ta-dan",
+    "merchant": "shopee",
+    "cat": "me-va-be"
   }
 ]
